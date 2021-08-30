@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=UTF-8>
+    <title>Trostenets</title>
+    <script type="text/javascript" src="jquery.js"></script>
+<script src="js/index.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+   $.fn.animate_Text = function() {
+   var string = this.text();
+   return this.each(function(){
+   var $this = $(this);
+   $this.html(string.replace(/./g, '<span class="new">$&</span>'));
+   $this.find('span.new').each(function(i, el){
+    setTimeout(function(){ $(el).addClass('div_opacity'); }, 8 * i);
+   });
+  });
+ };
+   $('#example').show();
+   $('#example').animate_Text();
+});
+</script>
+  
+<script>
+    $(document).ready(function () {
+     var searchBlock = $('#form');
+    $(document).on('click', '#open', function () {
+     searchBlock.slideToggle();
+   
+  });
+});
+</script>
+
+
+
+
+<style>
+body {
+      margin: 0;
+      height: 3000px;
+    }
+
+    /* стили основного контейнера слайдера */
+    .slider {
+      position: relative;
+      overflow: hidden;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* стили для обёртки, в которой заключены слайды */
+    .slider__wrapper {
+      position: relative;
+      overflow: hidden; 
+    }
+
+    /* стили для контейнера слайдов */
+    .slider__items {
+      display: flex;
+      transition: transform 0.6s ease;
+    }
+
+    /* стили для слайдов */
+    .slider__item {
+      flex: 0 0 100%;
+      max-width: 100%;
+    height: 700px; margin: auto; left: 0; right: 0; justify-content: center; }
+
+    /* стили для кнопок "вперед" и "назад" */
+    .slider__control {
+      position: absolute;
+      top: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      color: #fff;
+      text-align: center;
+      opacity: 0.5;
+      height: 50px;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .slider__control_show {
+      display: flex;
+    }
+
+    .slider__control:hover,
+    .slider__control:focus {
+      color: #fff;
+      text-decoration: none;
+      outline: 0;
+      opacity: 0.9;
+    }
+
+    .slider__control_prev {
+      left: 0;
+    }
+
+    .slider__control_next {
+      right: 0;
+    }
+
+    .slider__control::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: transparent no-repeat center center;
+      background-size: 100% 100%;
+    }
+
+    .slider__control_prev::before {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    }
+
+    .slider__control_next::before {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    }
+
+    /* стили для индикаторов */
+    .slider__indicators {
+      position: absolute;
+      right: 0;
+      bottom: 10px;
+      left: 0;
+      z-index: 15;
+      display: flex;
+      justify-content: center;
+      padding-left: 0;
+      margin-right: 15%;
+      margin-left: 15%;
+      list-style: none;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .slider__indicators li {
+      box-sizing: content-box;
+      flex: 0 1 auto;
+      width: 30px;
+      height: 4px;
+      margin-right: 3px;
+      margin-left: 3px;
+      text-indent: -999px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.5);
+      background-clip: padding-box;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+    }
+
+    .slider__indicators li.active {
+      background-color: #fff;
+    }
+
+    .img-fluid {
+      display: inline-block;
+      height: auto;
+      max-width: 100%;
+    }
+ 
+.slider1{ color: white; font-weight: bold; font-size: 20px; font-style: fantasy; text-align: center; padding-top: 10px; text-decoration: none}
+
+a {margin-left: 10px}
+a.slider1:hover { color: Goldenrod; border-top: Goldenrod solid 3px }
+.view-box{
+  display:none
+}
+#form {
+  padding: 20px;
+  background-color: #000;
+  display: none;
+opacity: 0.6;
+position:fixed;
+top:200px;
+left:0;
+right:0;
+width:100%;
+height:100%
+}
+
+div#open {width:25px; left: 0; right:0;  position: fixed; z-index:3; margin: auto; }
+.open2 {
+  background: url("http://fe.it-academy.by/Sites/0030990/Images/loope1.jpeg") no-repeat;
+  height: 25px; 
+width:25px; background-size: 100%; opacity:0.7
+}
+.open2:hover {
+  background: url("http://fe.it-academy.by/Sites/0030990/Images/loopehover.jpeg") no-repeat; 
+  height: 25px;
+  width: 25px; background-size: 100%; opacity:0.7}
+
+div {display: grid}
+
+@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:100);
+
+
+rect#rect1 {fill:snow}
+rect#rect1:hover {fill:Lightgray}
+a#more:hover #rect1 {fill:Lightgray}
+span.buy {border:  solid goldenrod; color: white;  background-color: goldenrod; border-top-right-radius: 5px; border-top-left-radius: 5px; font-size: 5mm}
+span.buy:hover {border:  solid goldenrod; color: goldenrod;  background-color: white}
+span.news {margin-top: 50px;  background-color: goldenrod; color: white; border-top-right-radius: 5px; border-top-left-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; font-size: 5mm}
+span.news:hover {background-color: black}
+.date {opacity: 0.8; color: gray}
+span.news2 { padding: 10px; background-color: goldenrod; color: white; border-top-right-radius: 5px; border-top-left-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; font-size: 5mm}
+span.news2:hover {background-color: black}
+#advert:hover {background-color: Cornsilk}
+div#open {width:25px; left: 0; right:0; padding-top:10px; position: fixed; z-index:3; top: 100px; margin: auto}
+#fb {
+  background: url("data:image/gif;base64,R0lGODdhMgAyANUAAAQCBISChERCRMTCxCQiJOTi5GRmZKSmpBQSFFRSVNTS1DQyNPTy9JSSlHR2dLS2tAwKDExKTMzKzCwqLOzq7GxubKyurBwaHFxaXNza3Dw6PPz6/JyanIyKjHx+fLy+vAQGBISGhERGRMTGxCQmJOTm5GxqbKyqrBQWFFRWVNTW1DQ2NPT29JSWlHx6fLy6vAwODExOTMzOzCwuLOzu7HRydLSytBweHFxeXNze3Dw+PPz+/JyenAAAAAAAAAAAACwAAAAAMgAyAAAG/sCdcEgsGo/IpHLJbDqf0OiT8XLEJggACDGJuR4MKfSVAAHO6PQZhHmIl6cZeuU6KWisDU1xcmjQMzZvRhkiZzchJUwlIRdnIjmDQgcwACgcG1AbLVkwJ4MuZxg0bzQYZx5iJlockkItZhVRoSAvrkMPEACpTgdatk85LwcnJy8yFEQPZ59MGZWtTQwBjmpnMkQcADCRS4YYThLVKCIYKSk6uthEpyJwlqTOujoDRnLrQzRZgkly0UwLAKTIZCQgviEtAMxI8gLADYJLGt4IM4TCgBcvCAA4KGSDI2BGEgAI4QTHSCIdzKThKCSEwCMMzChqQmLjkBNnVogQIEBE/oYjBbSwMNJQg5MNWoisANDCyVKQQxwAcOCEgqUhSAFQZBKKapEYACw4yQGAwJCgKJ7gjGGkpgInGcoOUQGAxBMFdY1kiedMrhC6E55YTVvEzFAkNhAohlHJrpC4ABRLRiABCVIQRsxANIJTjdm/1s4kO3JZLwC+nAHEoMGaxtYdrVnjRZCERuS2AN4iwZnCyQcAOpLgDVwkQtgkvJ0kNJDEAoAIRroiV9iheod/NKxX1wGgQxKpvJQBMLrb2ucdkNWIRfLHTREWumYaUeCgvgMDeUHDsF9/tJGgIBxWhEguNBHXeXQ5xtVLRzQEw2tIxKVgXMQtwUAlUBUhh3dLwhw4V35LdKCQEjZsU0CHICbIRAGVuJeEIcEp4eFjAFSYhAAAuLNEDrpwGGGKICLhEgwnMuEcU0nMuIOKSfBwxgFPeHAGDz9OWGMS2uwSRQVnOLAZjQgGiVUoAMgiRQM5/USEhB8qeNYfWr5xQiUg1CCfkhQSUUINunjiSgHGaWFCPWyC5pgEJqgUQTe3PBDQGQgYEiYKOGh0xgL83ELEBzjocoaVaECAwQeaJrHBCx7EAN1jJCTgwQsClirrrLTWqmkQADs=") no-repeat;
+  height: 30px; 
+width:30px; background-size: 100%
+}
+#fb:hover {
+  background: url("data:image/gif;base64,R0lGODdhMgAyAOYAAAQCBGxWFDwuDKyCHCQaBJRuFFRCDMSWHAwOBIRiFGRODEw6DLyOHDQmBJx6FNSiHHxeFEw2DLyKHGRKDNSeHBwSBAwKBEQ2DLSKHCwiBJx2FFxKDMyeHIxqFGxODDwqDKx+HAwGBHRWFEQyDLSGHCweBJxyFFxCDMyWHBQOBIxmFFQ+DMSSHDQqDKR6HNymJGxSDAQGBDwyDKyGHCQeBJRyFIRmFEw+DLySHDQmDNSiJHxiFBwWBHRaFFxGDMyaHBQSBKR+HGxSFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAMgAyAAAH/oAvgoOEhYaHiImGDy+Mjo2Qj5KRlJOWlIqZmpuEl56NFBoKMgQWAAAWBDIKGhyVr4+cgxoRMae3uLgLGrKCn44FNLcZMAUYPw8PPyQFCg23NDWwr5kMAqdAPSyYsQ8HIkCnAgybnx2mCAmMi52DDwkIqB2+1IoKpws/7piQ+4IoC07BSPTJxykb/gqt60evUYJTPi4luheDVzd+62L102BrIKJJHU7x0rSOgYYOHQo4GHCAkIZT8yYZYhACAMJpj37AqJDrFolHDy2QY+fo2gKGiQaEA5BCwIIFFxrYmtEpoIB6ggow1UfvEgZTDYI0fCGMBMMf8aQphCRMHdJF/hkALMhIrwQAqpQeltA4CwCQhdNevARCod8BFwU68ADwsxCFcCMxXQDQYyyiG5QJibCFCy8lEXIBC/pha1tXWAQYOwoJoMWFCK9xvMUBIEZhui8b8D304NTCuBDWnn4RN/KgewraXToAAIGv3gBcaRT9AHk/RtcKWF7EAAAPSCz8Il0YS+sI0YsxkK/X/bsgDAAIJHz7AL57evG4it73oD0k+9cxFMsPTCF1CgXrOVJDChYwaMp98KHC4IQD0NdbDAr5tt0LrOHyHSMS9HQKCvz5ouFCpuizniAhjXDADzBy1cgPL9IIn3P7KYNKO6lhkBAjIV1wGnUvuABAA0MK/kJCfALKAEABgC0U0lG8MbQDAAbs10gNAMhgiAcAJDfeC1rRIEIPZ+4AyQ89oIlmC5lRMwEAHgTIZQYlstgThCKqdUhxhnBQEwtEkqDABIca4N1/qBzqaEuWhGebTJOJOR0h/r3HpHCF3DPXIS9ZIONYjvjHCIAyUcKBKQ409EhqlV06SKYvwCcfO5oBQIMiXFog24+NmPpCiB9i1AgLplgU4DpwtkAXUrTaWqUvcF6lyAMs1CRClf0teqq3xvaAimyfbHnKDqm+EO2mwtkA01uIwHCKCmt1Wyyqbz0EgEfDXWJQmHyteyt/9wCwAT+ZPADBKRkMVSq4xGLCwDP7dfpzUarn1OZDS4IITMgBG9RkgXa7JSwIDiOcEoMPLtjL6IcznMCZDITWu6yxD2gQ1ykIXMNnCjcsxrAJyvWynwsL1HTKvbjEsIBYJcskETUPOADDCNaqy8MFMLRMFLzXTptn0VpKXU+qUYOdLkliD0c2t5AEAgA7") no-repeat; 
+  height: 30px;
+  width: 30px; background-size: 100%}
+a#mail {color:white}
+
+a#mail:hover {color:Goldenrod}
+@media all and (max-width: 1490px)  {#slide-0 {background-size: 80%}
+#slide-1  {background-size: 80%}
+ #slide-2 {background-size: 80%} }
+@media all  and (max-width: 1290px)  {#slide-0 {background-size: 70%}
+ #slide-1 {background-size: 70%}
+ #slide-2 {background-size: 70%} }
+@media all  and (max-width: 1090px)  {#slide-0  {background-size:  60%}
+#slide-1 {background-size: 60%}
+#slide-2 {background-size: 60%} }
+@media all  and (max-width: 890px)  {#slide-0 {background-size: 50%}
+#slide-1 {background-size: 50%}
+#slide-2 {background-size: 50%} }
+@media all  and (max-width: 790px)  {#slide-0 {background-size: 40%}
+ #slide-1 {background-size: 40%}
+ #slide-2 {background-size: 40%} }
+@media all  and (max-width: 590px)  {#slide-0 {background-size: 30%}
+ #slide-1 {background-size: 30%}
+ #slide-2 {background-size: 30%} }
+@media all  and (max-width: 390px)  {#slide-0 {background-size:  20%}
+#slide-1 {background-size: 20%}
+ #slide-2 {background-size: 20%} }
+@media all  and (max-width: 190px)  {#slide-0 {background-size: 10%}
+ #slide-1  {background-size: 10%}
+#slide-2 {background-size: 10%} }
+.title-0 {font-size:40pt; position: relative;  left: 0; right: 0; margin-left: 0; margin-right: 0}
+.title-1 {font-size:25pt; left: 0; right: 0; position: relative; margin-left: 0; margin-right: 0}
+
+@media all and (max-width: 1490px)  {.title-0 {position: relative; left:-125px; font-size: 35pt}
+} 
+.title-1 {position: relative; left:-125px; font-size: 20pt}
+}
+}
+@media all and (max-width: 1400px)  {.title-0 { position: relative; left:-250px; top: -300px; font-size: 25pt} .title-1 {position: relative; left:-250px; font-size: 15pt}
+}
+@media all and (max-width: 1300px)  {.title-0 { position: relative; left:-300px; top: -400px; font-size: 20pt} .title-1 {position: relative; left:-300px; font-size: 12pt}
+}
+@media all and (max-width: 840px)  {.title-0 { position: relative; left:-350px;  top: -500px; font-size: 20pt} .title-1 {position: relative; left:-350px; top:-50px; font-size: 10pt}
+}
+@media all and (max-width: 800px)  {.title-0 { position: relative; left:-400px; font-size: 15pt} .title-1 {position: relative; left:-400px; font-size: 10pt}}
+@media all and (max-width: 595px)  {.title-0 { position: relative; left:-500px;  font-size: 14pt} .title-1 {position: relative; left:-500px; font-size: 10pt}}
+.content {grid-column: 2; grid-row: 1}
+@media all and (max-width: 1110px) {.content {grid-column: 1; grid-row: 9 / 11}}
+.image1 {width: 70%}
+.gallery1 {width: 80%}
+.gallery2 {width: 100%}
+.galleryimage1 {grid-column: 1; grid-row: 4 / 6; position: relative; left: 0px; right: 0px; margin: auto}
+.galleryimage2 {grid-column: 3; grid-row: 5; position: relative; left: 0px; right: 0px; margin: auto}
+.galleryimage3 {grid-column: 4; grid-row: 4 / 6; position: relative; left: 0px; right: 0px; margin: auto}
+.galleryimage4 {grid-column: 2; grid-row: 5; position: relative; left: 0px; right: 0px; margin: auto}
+.galleryimage5 {grid-column: 3; grid-row: 4; position: relative; left: 0px; right: 0px; margin: auto}
+.galleryimage6 {grid-column: 2; grid-row: 4; position: relative; left: 0px; right: 0px; margin: auto  }
+@media all and (max-width: 800px) {.galleryimage2 {grid-column: 1; grid-row: 7 } .galleryimage5 {grid-column: 1; grid-row: 8 / 10} .galleryimage3 {grid-column: 2; grid-row: 6 / 10}
+}
+@media all and (max-width: 600px) {.galleryimage1 {grid-column: 3; grid-row: 4 / 6}
+.galleryimage2 {grid-column: 3; grid-row: 7}
+.galleryimage3 {grid-column: 3; grid-row: 8 / 9}
+.galleryimage4 {grid-column: 3; grid-row: 10}
+.galleryimage5 {grid-column: 3; grid-row: 11 / 12}
+.galleryimage6 {grid-column: 3; grid-row: 13  }}
+.excursion-1 {width: 60%;  grid-column: 4; grid-row: 5 / 6; z-index: 0; text-align: center}
+.excursion-2 {width: 60%; grid-column: 5; grid-row: 5 / 6; text-align: center}
+.excursion-3 {width: 60%; grid-column: 6 ; grid-row: 5 / 6; text-align: center}
+@media all and (max-width: 1300px) {.excursion-1 {grid-column: 5; grid-row: 5 / 7; z-index: 0}
+.excursion-2 {grid-column: 5; grid-row: 8 / 10}
+.excursion-3 {grid-column: 5; grid-row: 11/ 13}}
+.blog-1 {grid-column:  2; grid-row: 6 / 8; background-image: url('/Sites/0030990/Images/777181_main.jpg'); background-size: 100%; text-align: center; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; z-index:0; height: 400px; background-repeat: no-repeat}
+.blog-2 {background-image: url('http://fe.it-academy.by/Sites/0030990/Images/table.jpeg'); grid-column:  3; grid-row: 6 / 8;  background-size: 100%; text-align: center; border-top-right-radius: 10px; border-top-left-radius: 10px; z-index: 2; padding-bottom:0; background-repeat: no-repeat}
+.blog-3 {grid-column:  4; grid-row: 6 / 8; background-color: black; text-align: center; padding-top 50px; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; z-index:1; width: 60%}
+@media all and (max-width: 900px) {.blog-1 {grid-column:  2; grid-row: 6 / 8; background-image: url('http://fe.it-academy.by/Sites/0030990/777181_main.jpg'); background-size: 100%; text-align: center; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; z-index:0; height: 400px; background-repeat: no-repeat}
+.blog-2 {background-image: url('http://fe.it-academy.by/Sites/0030990/Images/table.jpeg'); grid-column:  2; grid-row: 9 / 11;  background-size: 100%; text-align: center; border-top-right-radius: 10px; border-top-left-radius: 10px; z-index: 2; padding-bottom:0; background-repeat: no-repeat}
+.blog-3 {grid-column:  2; grid-row: 12 / 14; background-color: black; text-align: center; padding-top 50px; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; z-index:1; width: 60%}}
+.service-1 {grid-column:  1 / 2; grid-row: 7 / 9; border: solid Lightgray; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; z-index:1; width: 95%; position: relative}
+.service-2 {grid-column:  3; grid-row: 7 / 9; border: solid Lightgray; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; z-index:1; width: 95%; position: relative}
+.service-3 {grid-column:  4; grid-row: 7 / 9; border: solid Lightgray; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; z-index:1; width: 95%; position: relative}
+.service-4 {grid-column: 5; grid-row: 7 / 9; border: solid Lightgray; border-top-right-radius: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; z-index:2; width: 95%; position: relative}
+@media all and (max-width: 900px) {.service-1 {grid-column: 1 / 2; grid-row: 7 / 9}
+.service-2 {grid-column:  3; grid-row: 7 / 9}
+.service-3 {grid-column:  1 / 2; grid-row: 10 / 12}
+.service-4 {grid-column: 3; grid-row: 10 / 12}}
+.service-0 {grid-column:  3 / 5; grid-row: 3}
+@media all and (max-width: 540px) {.service-0 {grid-column:  1 / 3; grid-row: 3} .service-1 {grid-column: 1 / 3; grid-row: 7 / 9}
+.service-2 {grid-column:  1 / 3; grid-row: 10 / 12; align-item: center}
+.service-3 {grid-column:  1 / 3; grid-row: 13 / 15}
+.service-4 {grid-column: 1 / 3; grid-row: 16 / 18}
+}
+.map {grid-column: 1; grid-row: 1}
+.contacts {grid-column: 2; grid-row: 1}
+.map-google {width:700px}
+@media all and (max-width: 1100px) {.contacts {grid-column: 1; grid-row: 2} .map-google {width:100%}}
+body {
+  --animate-duration: 2s;
+}
+#example {display:none;}
+#example .new {opacity: 0;}
+#example .div_opacity{
+  -webkit-transition: opacity .1s ease-in-out;
+  -moz-transition: opacity .1s ease-in-out;
+  -ms-transition: opacity .1s ease-in-out;
+  -o-transition: opacity .1s ease-in-out;
+  transition: opacity .1s ease-in-out;
+  opacity: 1}
+.btn-group {
+  position: relative;
+  display: inline-block;
+}
+.img-fluid {height: 100%; width: 100%}
+@media all and (max-width: 600px) {  .img-fluid {height: 50%}}
+
+
+</style>
+<body>
+<a name="Main"></a>
+<div style="position: fixed; left:0; right:0; background-color: black; z-index:3; opacity: 0.8; text-align: center; margin:auto"><p class='linkhover'><a class="slider1" href="#Main" title='перейти на главную страницу'>ГЛАВНАЯ</a><a class="slider1" href='#Aboutus' title="перейти к информации о мемориале">О МЕМОРИАЛЕ</a><a class="slider1" href="#blogs" title="перейти к последним блогам">БЛОГ</a><a class="slider1"  href="#gallery" title='перейти к галерее'>ГАЛЕРЕЯ</a> <a class="slider1" href='#contact' title="перейти к к контактам">КОНТАКТЫ</a></p>
+  <div id="open" class='open2'>
+     <form id='form' action="http://fe.it-academy.by/Sites/0030990/Main_page.html/search?q=">
+     <input type="search"  placeholder="Поиск по сайту"  target="_blank">
+<input type="submit" value="Найти">
+      </form>
+</div></div>
+<div class="slider">
+    <div class="slider__wrapper">
+      <div class="slider__items">
+        <div class="slider__item">
+          <img class="img-fluid" src="/Sites/0030990/Images/Gates_of_memory.png" alt="c1">
+        </div>
+        <div class="slider__item">
+          <img class="img-fluid" src="/Sites/0030990/Images/Blagovshhina1-1-1024x532.jpg" alt="c2">
+        </div>
+        <div class="slider__item">
+          <img class="img-fluid" src="/Sites/0030990/Images/23250_5.jpg" alt="c3">
+        </div>
+        <div class="slider__item">
+          <img  class="img-fluid" src="/Sites/0030990/Images/IMG_7425.jpg" alt="c4">
+        </div>
+      </div>
+    </div>
+    <a class="slider__control slider__control_prev" href="#" role="button"></a>
+    <a class="slider__control slider__control_next" href="#" role="button"></a>
+  </div>
+
+  <script>
+    'use strict';
+    var slideShow = (function () {
+      return function (selector, config) {
+        var
+          _slider = document.querySelector(selector), // основный элемент блока
+          _sliderContainer = _slider.querySelector('.slider__items'), // контейнер для .slider-item
+          _sliderItems = _slider.querySelectorAll('.slider__item'), // коллекция .slider-item
+          _sliderControls = _slider.querySelectorAll('.slider__control'), // элементы управления
+          _currentPosition = 0, // позиция левого активного элемента
+          _transformValue = 0, // значение транфсофрмации .slider_wrapper
+          _transformStep = 100, // величина шага (для трансформации)
+          _itemsArray = [], // массив элементов
+          _timerId,
+          _indicatorItems,
+          _indicatorIndex = 0,
+          _indicatorIndexMax = _sliderItems.length - 1,
+          _stepTouch = 50,
+          _config = {
+            isAutoplay: false, // автоматическая смена слайдов
+            directionAutoplay: 'next', // направление смены слайдов
+            delayAutoplay: 5000, // интервал между автоматической сменой слайдов
+            isPauseOnHover: true // устанавливать ли паузу при поднесении курсора к слайдеру
+          };
+
+        // настройка конфигурации слайдера в зависимости от полученных ключей
+        for (var key in config) {
+          if (key in _config) {
+            _config[key] = config[key];
+          }
+        }
+
+        // наполнение массива _itemsArray
+        for (var i = 0, length = _sliderItems.length; i < length; i++) {
+          _itemsArray.push({ item: _sliderItems[i], position: i, transform: 0 });
+        }
+
+        // переменная position содержит методы с помощью которой можно получить минимальный и максимальный индекс элемента, а также соответствующему этому индексу позицию
+        var position = {
+          getItemIndex: function (mode) {
+            var index = 0;
+            for (var i = 0, length = _itemsArray.length; i < length; i++) {
+              if ((_itemsArray[i].position < _itemsArray[index].position && mode === 'min') || (_itemsArray[i].position > _itemsArray[index].position && mode === 'max')) {
+                index = i;
+              }
+            }
+            return index;
+          },
+          getItemPosition: function (mode) {
+            return _itemsArray[position.getItemIndex(mode)].position;
+          }
+        };
+
+        // функция, выполняющая смену слайда в указанном направлении
+        var _move = function (direction) {
+          var nextItem, currentIndicator = _indicatorIndex;;
+          if (direction === 'next') {
+            _currentPosition++;
+            if (_currentPosition > position.getItemPosition('max')) {
+              nextItem = position.getItemIndex('min');
+              _itemsArray[nextItem].position = position.getItemPosition('max') + 1;
+              _itemsArray[nextItem].transform += _itemsArray.length * 100;
+              _itemsArray[nextItem].item.style.transform = 'translateX(' + _itemsArray[nextItem].transform + '%)';
+            }
+            _transformValue -= _transformStep;
+            _indicatorIndex = _indicatorIndex + 1;
+            if (_indicatorIndex > _indicatorIndexMax) {
+              _indicatorIndex = 0;
+            }
+          } else {
+            _currentPosition--;
+            if (_currentPosition < position.getItemPosition('min')) {
+              nextItem = position.getItemIndex('max');
+              _itemsArray[nextItem].position = position.getItemPosition('min') - 1;
+              _itemsArray[nextItem].transform -= _itemsArray.length * 100;
+              _itemsArray[nextItem].item.style.transform = 'translateX(' + _itemsArray[nextItem].transform + '%)';
+            }
+            _transformValue += _transformStep;
+            _indicatorIndex = _indicatorIndex - 1;
+            if (_indicatorIndex < 0) {
+              _indicatorIndex = _indicatorIndexMax;
+            }
+          }
+          _sliderContainer.style.transform = 'translateX(' + _transformValue + '%)';
+          _indicatorItems[currentIndicator].classList.remove('active');
+          _indicatorItems[_indicatorIndex].classList.add('active');
+        };
+
+        // функция, осуществляющая переход к слайду по его порядковому номеру
+        var _moveTo = function (index) {
+          var i = 0, direction = (index > _indicatorIndex) ? 'next' : 'prev';
+          while (index !== _indicatorIndex && i <= _indicatorIndexMax) {
+            _move(direction);
+            i++;
+          }
+        };
+
+        // функция для запуска автоматической смены слайдов через промежутки времени
+        var _startAutoplay = function () {
+          if (!_config.isAutoplay) {
+            return;
+          }
+          _stopAutoplay();
+          _timerId = setInterval(function () {
+            _move(_config.directionAutoplay);
+          }, _config.delayAutoplay);
+        };
+
+        // функция, отключающая автоматическую смену слайдов
+        var _stopAutoplay = function () {
+          clearInterval(_timerId);
+        };
+
+        // функция, добавляющая индикаторы к слайдеру
+        var _addIndicators = function () {
+          var indicatorsContainer = document.createElement('ol');
+          indicatorsContainer.classList.add('slider__indicators');
+          for (var i = 0, length = _sliderItems.length; i < length; i++) {
+            var sliderIndicatorsItem = document.createElement('li');
+            if (i === 0) {
+              sliderIndicatorsItem.classList.add('active');
+            }
+            sliderIndicatorsItem.setAttribute("data-slide-to", i);
+            indicatorsContainer.appendChild(sliderIndicatorsItem);
+          }
+          _slider.appendChild(indicatorsContainer);
+          _indicatorItems = _slider.querySelectorAll('.slider__indicators > li')
+        };
+
+        var _isTouchDevice = function () {
+          return !!('ontouchstart' in window || navigator.maxTouchPoints);
+        };
+
+        // функция, осуществляющая установку обработчиков для событий 
+        var _setUpListeners = function () {
+          var _startX = 0;
+          if (_isTouchDevice()) {
+            _slider.addEventListener('touchstart', function (e) {
+              _startX = e.changedTouches[0].clientX;
+              _startAutoplay();
+            });
+            _slider.addEventListener('touchend', function (e) {
+              var
+                _endX = e.changedTouches[0].clientX,
+                _deltaX = _endX - _startX;
+              if (_deltaX > _stepTouch) {
+                _move('prev');
+              } else if (_deltaX < -_stepTouch) {
+                _move('next');
+              }
+              _startAutoplay();
+            });
+          } else {
+            for (var i = 0, length = _sliderControls.length; i < length; i++) {
+              _sliderControls[i].classList.add('slider__control_show');
+            }
+          }
+          _slider.addEventListener('click', function (e) {
+            if (e.target.classList.contains('slider__control')) {
+              e.preventDefault();
+              _move(e.target.classList.contains('slider__control_next') ? 'next' : 'prev');
+              _startAutoplay();
+            } else if (e.target.getAttribute('data-slide-to')) {
+              e.preventDefault();
+              _moveTo(parseInt(e.target.getAttribute('data-slide-to')));
+              _startAutoplay();
+            }
+          });
+          document.addEventListener('visibilitychange', function () {
+            if (document.visibilityState === "hidden") {
+              _stopAutoplay();
+            } else {
+              _startAutoplay();
+            }
+          }, false);
+          if (_config.isPauseOnHover && _config.isAutoplay) {
+            _slider.addEventListener('mouseenter', function () {
+              _stopAutoplay();
+            });
+            _slider.addEventListener('mouseleave', function () {
+              _startAutoplay();
+            });
+          }
+        };
+
+        // добавляем индикаторы к слайдеру
+        _addIndicators();
+        // установливаем обработчики для событий
+        _setUpListeners();
+        // запускаем автоматическую смену слайдов, если установлен соответствующий ключ
+        _startAutoplay();
+
+        return {
+          // метод слайдера для перехода к следующему слайду
+          next: function () {
+            _move('next');
+          },
+          // метод слайдера для перехода к предыдущему слайду          
+          left: function () {
+            _move('prev');
+          },
+          // метод отключающий автоматическую смену слайдов
+          stop: function () {
+            _config.isAutoplay = false;
+            _stopAutoplay();
+          },
+          // метод запускающий автоматическую смену слайдов
+          cycle: function () {
+            _config.isAutoplay = true;
+            _startAutoplay();
+          }
+        }
+      }
+    }());
+
+    slideShow('.slider', {
+      isAutoplay: true
+    });
+  </script>
+<div style="display: grid;  grid-template-columns: minmax (100px auto); grid-template-rows: 30px 30px; padding: 10px; grid-column-gap: 20px; grid-row-gap: 100px">
+    <div style="grid-column: 1; grid-row: 1"><img class="image1" src='/Sites/0030990/Images/72721474_925354181169078_1403257148082749440_o.jpg' alt="Врата памяти фрагмент"></div>
+     <div id='Aboutus' class="content"><h1><strong>НЕСКОЛЬКО СЛОВ О НАС</strong></h1>
+                                                                          <p style="color:goldenrod; font-size:15mm; padding-top:0; margin-top:0">_______</p>
+<p id='example' style="font-size: 5mm">Мемориальный комплекс «Тростенец» в Минске построен на месте одноименного концентрационного лагеря, действовавшего во время Второй Мировой войны. Концлагерь «Тростенец» является четвёртым по числу уничтоженных в нём людей после печально известных Освенцима, Треблинка и Майданека. На территории Беларуси и бывшего СССР это самый крупный лагерь смерти. Здесь были убиты мирные жители и военнопленные из всех стран Советского союза, а также граждане Австрии, Германии, Чехословакии и Польши.</p>
+	
+<div style="z-index:1"><svg  style="position: relative; top:-50px; left:-10px" width=300 height=140 xmlns='http://www.w3.org/2000/svg'>
+    <rect id='rect1' x=10 y=45 width=220 height=50 rx=10 ry=10  stroke=gray stroke-width=2 />
+</svg><p style="position: relative; top:-145px; left:30px; font-size: 5mm; text-decoration: none"><a style="color: black; text-decoration: none" id='more' href="/Sites/0030990/aboutus.html">УЗНАТЬ БОЛЬШЕ</a></p></div>
+</div>
+</div>
+<div style="display: grid;   grid-template-columns: minmax (100px 500px); grid-template-rows: 100px 100px;  grid-row-gap: 10px; padding-top: 550px; position: relative; left: 0; right: 0; text-align: center; margin: auto">
+
+  <div  style="text-align:center; grid-column: 1 / 5; grid-row: 1; z-index:0">
+       <h1 id='gallery' style="padding-bottom:0; margin-bottom:0"><strong>ГАЛЕРЕЯ</strong></h1>
+                                                                     <p style="color:goldenrod; font-size:8mm; padding-top:0; margin-top:0"><strong>_____</strong><p>
+</div>
+     <div class="galleryimage1">
+         <a href=/Sites/0030990/Gallery.html#gal-1">
+            <img  class="gallery2" style="padding: 5px;  z-index: 2" src='/Sites/0030990/Images/434000f9fcbb9396196e598ac5a2bffc.jpg' alt="врата памяти" height="420"></a></div>
+    <div  class="galleryimage2"><a href="/Sites/0030990/Images/Gallery.html#gal-2"><img class="gallery1" alt="" style="padding: 5px" src='/Sites/0030990/Images/016895818_40300.jpg'  height="200"></a></div>
+      <div class="galleryimage3">
+           <a href="/Sites/0030990/Gallery.html#gal-3">
+                <img  class="gallery2" style="padding: 5px;  z-index: 1" src='/Sites/0030990/Images/Blagovshhina1-1-1024x532.jpg' alt="часть мемориала"  height="420"></a></div>
+       <div class="galleryimage4">
+          <a href="/Sites/0030990/Gallery.html#gal-4">
+              <img class="gallery1" style="padding: 5px; z-index: 2" src='/Sites/0030990/Images/325eeb76601c09e5b1679e6f65dad0b5.jpg' alt="часть мемориала"  height="200"></a></div>
+        <div class="galleryimage5">
+           <a href="/Sites/0030990/Gallery.html#gal-5">
+                <img class="gallery1" style="padding: 5px; ; z-index: 1" src='/Sites/0030990/Images/img_9234.jpg' alt="часть мемориала"  height="200"></a></div>
+        <div class="galleryimage6">
+           <a href="/Sites/0030990/Gallery.html#gal-6">
+               <img  class="gallery1" style="padding: 5px; z-index: 2"  src='/Sites/0030990/Images/23250_5.jpg' alt="фрагмент мемориала"  height="200"></a></div>
+</div>
+
+
+
+<div style="display: grid;  grid-template-columns:  minmax (100px 500px); grid-template-rows: 100px 100px; grid-column-gap: 20px; grid-row-gap: 10px; padding-top: 200px;  background-color: FloralWhite">
+
+  <div style="text-align:center; grid-column: 1 / 7; grid-row: 1">
+       <h1 style="padding-bottom:0; margin-bottom:0"><strong>НАШИ ЭКСКУРСИИ</strong></h1>
+        <p style="color:goldenrod; font-size:15mm; padding-top:0; margin-top:0">_____<p>
+</div>
+    <div class="excursion-1">
+         <p><span style="border:  solid goldenrod; border-top-right-radius: 5px; border-top-left-radius: 5px; font-size: 5mm; color: white; background-color: goldenrod">«Лагерь смерти Тростенец»</span</p>
+         <p  style="border:  solid Lightgray; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding-top: 0px; position: relative; font-size: 5mm; padding-bottom: 10px; height: 500px"><span>История территории и памятных мест одного из самых крупных лагерей смерти в Европе включает посещение Малого Тростенца, Благовщины и Шашковки, где в годы войны 1941–1944 г. было уничтожено более 206500 белорусских и депортированных евреев, военнопленных, партизан, подпольщиков, жителей Минска и близлежащих городов.</span>
+<br>
+              <span class="buy" style=" font-size: 5mm; padding-bottom:0px;  width:100%; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; position: relative; top: 0px"><a  id="mail" style= 'color: white; text-decoration: none' href="mailto:andrew44332211@gmail.com"><strong>Заказать сейчас</strong></a></span>
+</p>
+
+</div>
+    <div class="excursion-2">
+        <p id='post' ><span style="border:  solid black; border-top-right-radius: 5px; border-top-left-radius: 5px; font-size: 5mm; color: white ; background-color: black">«Депортации в «Минское гетто»</p>
+       <p  style="border: solid Lightgray;    border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; position: relative; font-size: 5mm; height: 500px">Экскурсия рассказывает о более 26 тыс. депортированных евреев из Гамбурга, Бремена, Дюссельдорфа, Кельна / Бонна, Франкфурта-на-Майне, Берлина, Вены, Брно /Терезиенштадта в Минское гетто и лагерь Тростенец.
+<br>
+          <span class="buy" style="font-size: 5mm; width:100%; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; position: relative"><a  id="mail" style= 'color: white; text-decoration: none' href="mailto:andrew44332211@gmail.com"><strong>Заказать сейчас</strong></a></span></p>
+</div>
+    <div class="excursion-3">
+        <p><span style="border:  solid goldenrod; border-top-right-radius: 5px; border-top-left-radius: 5px; font-size: 5mm; color: white; background-color: goldenrod; padding-bottom:0px; width:100%">«Минское гетто»</p>
+        <p style="border: solid Lightgray; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding-top: 0px; position: relative; font-size: 5mm; height: 500px"><span>Экскурсия рассказывает о более 26 тыс. депортированных евреев из Гамбурга, Бремена, Дюссельдорфа, Кельна / Бонна, Франкфурта-на-Майне, Берлина, Вены, Брно /Терезиенштадта в Минское гетто и лагерь Тростенец.
+</span><br>
+            <span class="buy" style="padding-bottom:0px; width:100%; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; position: relative; top: 70px; text-align: center"><a  id="mail" style= 'color: white; text-decoration: none' href="mailto:andrew44332211@gmail.com"><strong>Заказать сейчас</strong></a></span>
+</p>
+</div>
+</div>
+     <div style="display: grid;  grid-template-columns: minmax (100px 500px); grid-template-rows: 30px 30px 30px 30px ; grid-column-gap: 20px; grid-row-gap: 10px; padding-top: 100px; padding-bottom: 100px">
+
+     <div style="text-align:center; grid-column:  2 / 5; grid-row: 1">
+       <h1 id='blogs' style="padding-bottom:0; margin-bottom:0"><strong>ПОСЛЕДНИЕ БЛОГИ</strong></h1>
+        <p style="color:goldenrod; font-size:15mm; padding-top:0; margin-top:0">_____<p>
+</div>
+     <div class="blog-1">
+           <p class="date" style="text-align: center">by Admin Sept 05, 2020 at 12:50 am</p>
+            <p><span class="news"><a 'href="/Sites/0030990/Main_page.html">Новости</a></span></p>
+            <h2  id='example' style="color:white; font-style: fantasy">МЕМОРИАЛЬНЫЙ КОМПЛЕКС ТРОСТЕНЕЦ</h2>
+</div>
+     <div class="blog-2">
+    <p  style="background-color: white; border: solid Lightgray; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; margin-top: 60%"><span style="text-align: center" class="news">СОВЕТЫ ТУРИСТАМ</span><br>
+         <span class="date">By Admin</span>
+<br>
+         <span  style="padding-bottom: 30px">БЛАГОВЩИНА: КАК ПОЧТИТЬ ПАМЯТЬ 150 000 УБИТЫХ ЧЕЛОВЕК, ЧТОБЫ НЕ БЫЛО МУЧИТЕЛЬНО СТЫДНО</span><br><br>
+         <span style="padding-bottom: 30px" class="date">Sept 05, 2020 at 07:25 pm</span>
+</p>
+</div>
+     <div class="blog-3">
+           <p  style="color: goldenrod; font-size: 15mm; vertical-align: top">&#128630;</p>
+            <p  id='post' style="color: white; font-style:italic; font-size: 6mm">Холокост &mdash; это состояние<br> человека, 
+приговорённого без вины и без надежды на <br>
+помилование<br>
+                 <span style="font-size: 4mm">Михаил Трейстер, узник Минского гетто<span>
+</p>
+</div>
+</div>
+
+<div   style="background-color: FloralWhite; padding-bottom:150px"><div style="text-align: center"><p style="margin:auto; position:relative; right: 100px; left:0px; top:-50px"><a href="/Sites/0030990/Blog.html" style='text-decoration: none' ><span class="news2">ПОКАЗАТЬ ВСЕ БЛОГИ</span></a></p></div>
+<div style="display: grid;  grid-template-columns: minmax(100px 500px); grid-template-rows: 20px; grid-column-gap: 10px; grid-row-gap: 10px; text-align: center; background-color: FloralWhite; margin-left: 5px; margin-right: 5px; align-item: center">
+    <div id='advert' class="service-0" style="background-color: FloralWhite; text-align: center"><h1 style="padding-bottom:0; margin-bottom:0"><strong>ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ</strong></h1>
+        <p style="color:goldenrod; font-size:15mm; padding-top:0; margin-top:0">_____<p></div>
+    <div id='advert'  class="service-1">
+        <img style='width:50px; height: 50px; padding: 10px' src="data:image/gif;base64,R0lGODdhQABAANUAAAQCBGxWFKyCHDwuDJRuFCQaBFRCDMSWHIRmFAwOBJx6FDQmBHxaFGRODNSiHEw6DLyOHBwSBKx+HAwKBEQ2DCwiBGRKDNSeHIxuFKR6FDwqDHxiFAwGBHRWFLSKHEQyDJx2FCweBFxCDMyeHIxmFBQOBDQqDGxSDNymJKR+HAQGBKyGHDwyDJRyFCQeBMyaHDQmDHxeFNSiJFQ+DMSSHBwWBKR6HIRiFHRaFFxGDIxqFBQSBGxSFAAAAAAAAAAAACwAAAAAQABAAAAG/kCUcEgUvmKmHWDJbDqf0OZOE3sVr0IHSsvdomKTqHhMnmy83S42a1hqMLQ0ei6vox00zGA5Ww/tDQAcGERafoeIWwQqAA10XmsCSxlZhY92mHNDGUsCfnIoe46Gaommf5CBLJWlRQcAKlZYaQ4WYWITFg52hS9LL4ZFciAAJpdXFmRMjrOQKCYAIKjBRTHKTynHDinXTjHO014n3U3ZftzkSyfhWMkdmV3J17raXh0AFuCsXm03prsWEoxJQC+RAwQADLC7QgEAIXjCvCxpVc+QDgAU9D3aIw0RqUJLUGm8ooXYgIVFKgDIlklksImW6m0CsECjHBcAPFCLuJNL/kiKa7p4AFBgoYMGJZrQ2EexFcxwvIZAkNKAmrwmwILa3BJyJElII54w26KE5VNQUImclTkNJrcSkGD6mqB1Z1sAXi3t5ADAioOuXPGimLrjkV5NQp6y3acEQmIALyGjGFqU5yGfgu1aJlIgZ+A/PyXQRLtYcctwC1Y+jlwSwMmIHj/n3UeE42fMQi5m1ARxiOljhx8A0LHat+QNCU/xXFBzNmIhbc78FSwbB76KhkUyfT7HXXEhZVEEWqfcqEF94xxxKpwlUJMYEEmjWFBhu/wu1pqM3YKUCYLydCh2mT4ILVFCAxfo48AHALSAHVBd9RZOCwB8YJca0CgAYBoC/n6ijwLF0JYSAALEN9JPj2RgggocmEDJPpLU9xUXnTl2Sh3MaTaOE+8UMVUN2Q0RAQAVEGBiM+EQAwAOB7xgHQAaeqEiAEDOSBYTLpCw1ICt2JUaDpVYd9IBBKRmoHxChIGDEum0OcYE49BlpQN8OXABCQMk5eaeCSxwwwh/qSCiWpI9aKiExl2IBmAANnqYFhGeKJkD9HlRwQJcVKrFpZnWtymmW2iKAqdCMJdFhwFSB9iqqrZq3KuPnVooihBOCtN0mOUamK647hqrr5ZNN0QFxghB7LDNjVrsqMkea2yzzVEKKgqAaUZtoYhRE0yX2oHzkazaprqFAAu48EEO/jGAkKC3sDlTip0gxJDDBy4s4Mm13CWKQmdOlPDiu+52KyWbTRQAKbZQddUJATjkgJMKHrRbycSaeMCICzngQMAKP0WqGUymtWGhA/ymU4MVDCpE6MGK4iYsJK9wsAVObZ6MQlJLdaEwXmjCRLAT7B2qyc9SAPsoXwegAALRAOwgjbX/LP2E0yjQAIvAQ0DTY3YfmchtK/doEHAanCy5ZUyOom0JDScwYk5eAewptxgBNOUuCAzOrfcAL2Lt7q0STSq0zoIfzNt2EzMqW9qLg3sjaIIX5zVigP/KdcD4sqJ4ebhpjjDW2wpkoxBT0TV5K2GMPhgAcpIGMArCDeAYHx4sAPAA1FzC7trsNNT+gIJEmKn38GTUlCnxyIvRXBAAOw==" alt='автобус'>
+     <h2 style="padding-left: 10px; position: relative; top: -30px">Заказ автобуса</h2>
+    <p   style="color:gray; font-size:5mm;position: relative; top: -80px">____________</p>
+    <p style="color:gray; font-size:5mm; padding-top:0; margin-top:0; padding: 10px; position: relative; top: -115px">Мы поможем Вам с транспортом - организуем доставку Вас и Вашей компании в любую точку Минска с комфортом! </p>
+</div>
+  <div id='advert'  class="service-2">
+       <img style='width:50px; height: 50px;margin: 10px' src="data:image/gif;base64,R0lGODdhMgAyANUAAAQCBIxuFDwuDLyOHCQaBMyeHFxGDCwmBBQOBKx+HMSWHGRODDwqDNymJDQmBBwWBAwKBKR+HEw6DMSSHCwiBNSeHGRKDBwSBLSKHMyWHDQqDAQGBJRuFDwyDLySHCQeBFxKDBQSBGxSFDQmDNSiHLyKHMyaHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAMgAyAAAG/sCGcEgsGo/IpJHUYDqb0Kc0Sp1aqcpjJGHcdrnZ4fXaEHSwZvR5jA03MAsJACBZYOByuh0/r2PcVYEkFnNzBkyEhYcNiYZMgm1hFHMUQkyTAJVQmJqAbI8kCA8PCI8NoqSmqKWQT54mIiQVIiZNsLK0trGztWFjGBIIhcPExcaFCBIYU0kBx8/QxRscRKZSGIYDn61VJCUGc8tiR3IGUIBuTOASltXnwn/t29tD2Ajn+JZzoOhZoHPj5AkBeKkYBSYaih1AWMzBo31KSEBscGygsSYVMQLgRnGjxicQITIB2BEkgIcnI04kEU+jS30pSboc6dGVK5ntLNI0RXBi/kmdKmNC+OOEJMGPHaOQlLiRTVKmCP6UCBHyYsdiKE0dYUoTAIIBbyA4aOKgIZMDDWEGxMITgAAAIcDiYzaOrs987uYUYADggly8kYoUbTr3arEGBco+mPAoIbGxJBwPGwv0yDMmFRI+UGDxsOFhgwVCEZmPRIFJm3/uVJ20smCcbUxM+qBAJtOXSG/bTam1nWwABDL4rNp2yN12trGYQJv66O2nuZOLeSYkMYDUTLF+LmQ85drLma9PGFL2MVmzMwtbmRP+ggdu1gIfVzLnbVxPS5TWPCelqlewEUBQSWQKCSFZIZT9RF9Tc0TVQID+EdOVhOmNEdJQ5xjFW2ukeck0XxFL5RWTR0jZJpJ0VfgkzkzDMehdawrmRMRRR/3kXFX6heZKit5l1GJnxHTXmxFLYTLMgCFChNZjobGVY138KfhcIDO+iESNgnWX4Ybu6NjKSm2sZlGXRFppWTRopklifE4YqeabRxaW3zzwQRKlQEP2g58RQQAAOw==" alt='гостиница'>
+   <h2 style="padding-left: 10px">Бронирование гостиницы</h2>
+   <p style="color:gray; font-size:5mm; padding-top:0; margin-top:0; padding: 10px">____________</p>
+   <p id='post'  style="color:gray; font-size:5mm; padding-top:0; margin-top:0; padding: 10px">Гостиница IBB расположена в самом начале минского микрорайона «Юго-запад» рядом со станцией метро "Петровщина". Свежий воздух, прекрасный вид и спокойная атмосфера – безусловные преимущества этого места над центром города, который находится всего в 15 минутах езды отсюда! </p>
+</div>
+  <div id='advert'  class="service-3">
+    <img style='width:50px; height: 50px;margin: 10px' src="data:image/gif;base64,R0lGODdhQABAAMQAAAQCBIRiFDwuDKyGHMyaHCQaBFxCDLyKHAwKBNSiHEQ2DFxKDLySHJRyFLSGHNSeHCwiBBQOBEw2DAwGBIRmFMyeHCQeBFxGDLyOHAwOBNymJGRKDMSSHLSKHEw6DAAAACwAAAAAQABAAAAF/qAmjmRpnmiqqonWvm4Mz3JN33ZOr3zv+7igbigsDn/IpNLIJDqbMKV0eoI+r9YddTvNYr9erljDUSAmCgzPy9ZxMoA4AMFwjqcKuVyyavtjGhN6cRNCd1IJcIMZfWCOhhKDABKGh0kJGIpxGWosj59aGHp1IjiWlyJ6gCl/f6WqRqc/LRqqa6C4tC56sbJApauNrZ8mTSeSyMnKy8msNszQ0dCmx9LW13HOM9jc0dTFMRWCcRW5NuJy5booWiQGcgGWAXIXI5UlNANyEMMwEHIDgrGrceJfHAd3HOwDdI/EjXndpMX7FcVEBQQRo6m7Ai5KgncZlxlA0g6YBn0h/pUNMFYlWL8jAlu2q+jLI8wqHTZYmDDBwoYORhxcKDCnwAKgMHMW4OmzAz4dCS4ku7DOoVRkVKtEnZqgKj4BywR0rfEArDKxN8wmE0sQxtVl9axCi0virTK6JjroKdCAQIUGROU4paVXDl+/gPUMdlE4zuG/geMsjvK2AAESBCIvAFb58ojMcjaP6IxZc5XIDWw0MEwCtWrWL1zPWO04hwaM5EwQkDNBBm4A5UrsJkTid3DMvKuMA3A5yvBsI5Y3B/S8UCnpBKvb1GBBTmqHtAFYAOQavJzxMbrH+W4vPHp8GwwTgFEh8gZ78R3PD2ea1gL59JnGkAiNAcBXBZApsQZIgQcmKJg9B+zVAIKJCeZVC3YlIxogGSKzmS5bMbMhLSQmoBYybIFoYlgPmOTCiZKkyEqHcWRFoj00ApCVPThy5RAwUXSwwFLi/TRQC0IS2RSQPCI5pCBLujjQU7Z5Ao6VN97okpRPVaKFl1j+eJMzV5JpW1U0HQnTl2ta2WWVjZQ55YAVlfQmmHW2yWVMY8ZJpZkXNsknk3huSQ2IW3ZE0C2Kuhkoodq0maYdq8AQAgA7" alt='конференц-зал'>
+   <h2 style="padding-left: 10px">Аренда конференц-зала</h2>
+    <p style="color:gray; font-size:5mm; padding-top:0; margin-top:0; padding: 10px">____________</p>
+    <p  id='post' style="color:gray; font-size:5mm; padding-top:0; margin-top:0; padding: 10px">Конференц-центр IBB предлагает в аренду современные, хорошо оборудованные помещения для проведения семинаров, тренингов, презентаций, переговоров, лекций, международных конференций, корпоративных встреч, банкетов, фестивалей и других мероприятий.
+</p>
+</div>
+  <div id='advert' class="service-4">
+       <img style='width:50px; height: 50px;margin: 10px' src="data:image/gif;base64,R0lGODdhQABAAMQAAAQCBHRWFDwuDMSSHCQaBJRuFGRODMyeHEw6DHxiFCwiBNymJAwKBMyaHKR+HNSeHFQ+DDQmBAwGBHRaFEQyDMSWHJRyFGxSFEw+DIRiFCwmBNSiHAAAAAAAAAAAAAAAACwAAAAAQABAAAAF/uAijmRpnmiqqtvSvm4Mz3JN33ZOr3zv+7igbigsDn/IpNLIJDqbMKV0eoI+r9YddTvNYr/eH2AMEJHLizNqLCFgCi0p89yip8m485hgAcd6ahuBaiaCemMGS092jHg1ZoeIVj6ElWSFd5EAfT9zjo1jO4ZjAxhnBJM8g5ejaCZ2F2dwQIuftqE5hAsCZAgjQmKXmWi6JK0vDmSoPFCgAHWOUcMjDWQSIsDBYy6r28bc0cNxKOOeuM7SkN7qZdnjK5bexTB20Lgp5bXnt89/2LqtfuVIIoHMgIADrH1jN84OPoFFNJARUOHMAF5jNPiLEQjcNnc+Emg6lADbn2Mj/hySg3jkgYKRZBRseJdSmD00OEz2aFHh5UgFA769cIiySgkj2DYkiHAoQoI4NNn96agl6sMSxU7WUKnyqE6kNuqxIHSTpVVmr4Q5ESeimiOjqaCyZTHtQAAGVB8lyTct27ALePWclQa2XFevNw8xuGAy3Ua6OskO/KfJQIPHehsf8VcUU5xIBg7ozOz46lRWkymTCb3Qq+fNht8irjnmsubJWiCfXud4qE2tmF7n5HzY8WGzyNFGRh2VHvPMAoXj/tW193HN+UobXe6NpjSA0EcLhU39bW+P/eByDr99d7vZtN/njj57eOx7mH3jr598BV/Jt8WH3UrSVVUefu/MdXCcfewF595oVnWEWWvjMahaelopKNtaqZn2GWrw/OafehaiJ1cQRHE4H4EZdjKhaRVOV2CHcTXoWocPnaVbjAbyN9xaBmrXnpDq7Sgej3oleIWPGxFm4406Smfki4UN+COS2Y334o20rMjleUv6sVKJLIkQAgA7" alt='ресторан'>
+    <h2 style="padding-left: 10px; position: relative; top: -15px">Обеды в ресторане</h2>
+   <p style="color:gray; font-size:5mm; padding-top:0; margin-top:0; padding: 10px;  position: relative; top: -45px">____________</p>
+   <p style="color:gray; font-size:5mm; padding-top:0; margin-top:0; padding: 10px; position: relative; top: -60px">В ресторане Westfalia вы можете попробовать блюда немецкой, белорусской и европейской кухни.
+</p>
+</div>
+</div>
+</div>
+<div  style="background-color: DarkSlateGrey; padding-bottom: 450px">
+<div style="display: grid;  grid-template-columns: minmax(100px 900px); grid-template-rows: 300px; grid-column-gap: 20px; grid-row-gap: 10px; padding-top: 100px; padding-bottom: 100px; background-color: DarkSlateGrey">
+  <div class="map" style="background-color: DarkSlateGrey"><iframe class='map-google' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17778.692297548798!2d27.70242452640473!3d53.834265385635874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdc5087a82bc06784!2sMemorial&#39;nyy%20Kompleks%20Trostenets!5e0!3m2!1sde!2snl!4v1599394851914!5m2!1sde!2snl"  height="600px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</div>
+   <div class="contacts" style="text-align: center; background-color: DarkSlateGrey; position:relative; top:170px">
+       <h1 id='contact' style="padding-bottom:0; margin-bottom:0; color: white; background-color: DarkSlateGrey"><strong>КОНТАКТНАЯ ИНФОРМАЦИЯ</strong></h1>
+                                                                     <p style="color:goldenrod; font-size:15mm; padding-top:0; margin-top:0">____________</p>
+        <p  style="color:white; font-size: 5mm; text-align: justify">Вы можете связаться с нами любым удобным для вас способом. Мы доступны 24/7 по электронной почте. Вы можете посетить мемориал лично.</p>
+  <div>
+    <img style='width:25px; height: 25px; display: inline; float: left' src="data:image/gif;base64,R0lGODdhQABAANUAAAQCBGxWFDwuDKyCHJRuFCQaBFRCDMSWHIRmFAwOBEw6DLyOHJx6FDQmBGRODNSiHHxeFEw2DGRKDBwSBAwKBEQ2DLSKHCwiBFxKDNSeHIxuFKx+HAwGBHRWFEQyDLSGHJx2FCweBFxCDMyeHIxmFBQOBFQ+DMSSHKR6HDwqDNymJIRiFAQGBDwyDKyGHJxyFCQeBMyaHEw+DLySHDQqDGxSFNSiJHxiFBwWBHRaFFxGDIxqFBQSBKR+HAAAAAAAACwAAAAAQABAAAAG/kCVcEgsGo/IpFL5UDWfzih0Kq1Sr9Ysdcnter3YsHYsLo+/6LTazCa721D1cbFSXCgsQCmkWC3kSHBaOw0AhoeIhhcEgliAQgwFiZOJBSiPQo1ODyKUnok6GZpNcjEXkxc1KBYZIxYoAaeJFzGAjTGSiBV/Q6SZCxWJMDGaaQ+yhjgDmVG9RAM4iBe+X4IGiDS1zczOTTE0iDpvVWgM2Nzb6ZkPKYiXaHC5ADi1vqT25Cox0YYFgl87EC2750ydswGINMAbV8iQgiP4svSKcKgBMzNdFiCyINFgNyEWEPHqghHCoQuBPsYpguzGODAKDtXoqGJGBQocdhGhUuPQ/kMubVQge7fTyYkEiCjMMPigx8mXJEsc4rhSSLBEET6CPJSgmhsViEYUJcVhEgdqUjIgGoc2EIVD2tA+eJuIQj4hMQ5x8CpGBT8AH/CR8jCpwlghLg7hgApUwCGX6h4soGuIwoHIKkwaEkDyZYdDhrU+OHEz52WCvq4CCMB4SVO9YttChJihrKENfM+o4HFI4UXdWzQc4vHPtQoJh1J4NCJbBThDEhb2VfFB5G9HWTROZQvGyXMAOpoXacuporGvQoQbYnECapwDeQwpLM4kkzxxQIvqUCw+ZV9SCBzCwmm6bXOAbQAgcF2BYDwwwSHRJRHHE8gZQtxyzHE3xA0C/p6AnREnILjCYR921kQGvBliwmxbmHBICRlgWNSCW+y0gkB3jVfdISsIBpyJvchDA4nbOJZMfxnSeBcUBCBCwHJNNHkICErW6JUR3/mzoH3mIamSe1UkdkgOmD3w2SHLVCljfUfEtF57+cyA4ENebomRRAdQZhg1TajGwWUSWXlehpoZ8gI6ICACgUfkcbdSjQ/AwN89D/yl5Za/2TKbCk7JxExPh/SAzoxEqukjPi6ux5EKFsQHwIqnapWkcUk+EINUhsDwwDEvasMokbFCmqMKAY15pnzbCFsnm+M18wBheh3SQkHNNjvKlwXNQNkhFLQXa6aYyNbWjYkoSNCsTujducUWRhqSQqOP5icvUHlWttSw3KibbrrFkpChoJhQK+FEHgAM7Bn6YufLAYB+WVXAAs8aL5L/JJxPowcvu9CmHT3870sWR4Quel4EAQA7"><span style="color:white; font-size: 5mm; text-align: justify; float:left; display: inline; position: relative; top: -20px; left: 40px" alt='адрес'>ул. Селицкого, Минск</span></div>
+  <div>
+      <img style='width:25px; height: 25px' src="data:image/gif;base64,R0lGODdhGAAYANUAAAQCBHRWFKyCHDQqDIxuFMSWHFRCDBwWBNSiHBQOBIRiFEQ2DKR6HGRKDLSKHCwiBAwKBEQyDJx2FNSeHAwGBHxeFLSGHDwqDJRuFMyeHFxCDNymJIxqFGxODDQmBAQGBHRaFKyGHMyaHCQaBNSiJBQSBIRmFEw6DKR+HGRODLyOHDwuDJRyFFxGDDQmDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAGAAYAAAG68CNcEgsGomITXKpbDKfx42jNaKsCtEhFPOhRFoQj3OcLGYgDyzCBGBktUIWQDKcJFbksRYEUAtbFG9CZQEAGUMZDwd5TFoYAA5KIh4ALIJNGwIAHEIrH5aMmIMIJSdJCRqiWWUbGhSHAyUTg6FFIQAdGxIAFZdkCwkiCBcQKhsiEhJQrEMWAC0bKgkJAwDWDyJGjQgtACgbFgMPKQwmHxGNRUkTByPZRRW8cOkbKB8DE9sri6q0QhwAVhwiYiABs3Rl2Ixwk0TBM39I4AgoAeBBg2or8kVkxXGCggcfDgTgqA3Oqo0m/ZUhGQQAOw=="><span style="color:white; font-size: 5mm; text-align: justify; float:left; display: inline; position: relative; top: -20px; left: 40px" alt='телефон'>+375 (33) 309-60-72</span></div>
+  <div>
+     <img style='width:25px; height: 25px' src="data:image/gif;base64,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" alt='электронная почта'><span style="color:white; font-size: 5mm; text-align: justify; float:left; display: inline; position: relative; top: -20px; left: 40px"><a id="mail" style='text-decoration:none' href="mailto:andrew44332211@gmail.com">andrew44332211@gmail.com</a></span></div>
+   <div>
+         <a style="position:relative; left:-10px" id='fb' href="https://www.facebook.com/malytrostenets/"></a></div>
+</div>
+</div>
+</div>
+    <div style="background-color:white; padding-bottom:100px">
+</div>
+</body>
+</html>
